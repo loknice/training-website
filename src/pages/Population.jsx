@@ -1,192 +1,111 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useEffect } from 'react';
 
 function Population() {
+  useEffect(() => {
+    // Плавна прокрутка для TOC
+    const links = document.querySelectorAll('.list-group-item');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = e.target.getAttribute('href').substring(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }, []);
+
   return (
-    <main className="container px-4 py-4">
+    <div className="container py-5">
+      <h1 className="display-5 text-center mb-5">Ареал та популяція Лисиці звичайної</h1>
+
       <div className="row">
-        <aside className="col-md-3">
-          <nav className="sticky-top pt-3" aria-label="Зміст сторінки">
-            <h2 className="h4">Зміст</h2>
-            <ul className="nav flex-column">
-              <a href="#continentsList" className="nav-link" data-bs-toggle="collapse">Континенти</a>
-              <a href="#subcontinentsList" className="nav-link" data-bs-toggle="collapse">Субконтиненти</a>
-              <a href="#countriesList" className="nav-link" data-bs-toggle="collapse">Країни</a>
-              <a href="#introducedList" className="nav-link" data-bs-toggle="collapse">Інтродуковані в</a>
-              <a href="#biogeographicList" className="nav-link" data-bs-toggle="collapse">Біогеографічні зони</a>
-              <a href="#biomesList" className="nav-link" data-bs-toggle="collapse">WWF Біоми</a>
-            </ul>
-          </nav>
-        </aside>
-
-        <article className="col-md-9">
-          <h2 className="h2 text-success mb-4">Ареал поширення зайців</h2>
-          
-          <section id="continents" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#continentsList" 
-                      aria-expanded="false" 
-                      aria-controls="continentsList">
-                Континенти
-              </button>
-            </h3>
-            <div className="collapse" id="continentsList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Європа</li>
-                <li className="list-group-item">Азія</li>
-                <li className="list-group-item">Північна Америка</li>
-              </ul>
+        {/* Table of Contents */}
+        <div className="col-lg-3">
+          <div className="sticky-top" style={{ top: '90px' }}>
+            <h5 className="mb-3">Зміст</h5>
+            <div className="list-group">
+              <a href="#europe" className="list-group-item list-group-item-action">Європа</a>
+              <a href="#asia" className="list-group-item list-group-item-action">Азія</a>
+              <a href="#america" className="list-group-item list-group-item-action">Північна Америка</a>
+              <a href="#australia" className="list-group-item list-group-item-action">Австралія</a>
+              <a href="#status" className="list-group-item list-group-item-action">Статус популяції</a>
             </div>
-          </section>
+          </div>
+        </div>
 
-          <section id="subcontinents" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#subcontinentsList" 
-                      aria-expanded="false" 
-                      aria-controls="subcontinentsList">
-                Субконтиненти
-              </button>
-            </h3>
-            <div className="collapse" id="subcontinentsList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Західна Азія</li>
-                <li className="list-group-item">Центральна Азія</li>
-              </ul>
-            </div>
-          </section>
+        {/* Accordion */}
+        <div className="col-lg-9">
+          <div className="accordion" id="populationAccordion">
 
-          <section id="countries" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#countriesList" 
-                      aria-expanded="false" 
-                      aria-controls="countriesList">
-                Країни
-              </button>
-            </h3>
-            <div className="collapse" id="countriesList">
-              <ul className="list-group mb-3 list-columns">
-                <li className="list-group-item">Албанія</li>
-                <li className="list-group-item">Австрія</li>
-                <li className="list-group-item">Білорусь</li>
-                <li className="list-group-item">Бельгія</li>
-                <li className="list-group-item">Боснія і Герцеговина</li>
-                <li className="list-group-item">Болгарія</li>
-                <li className="list-group-item">Хорватія</li>
-                <li className="list-group-item">Чехія</li>
-                <li className="list-group-item">Данія</li>
-                <li className="list-group-item">Естонія</li>
-                <li className="list-group-item">Фінляндія</li>
-                <li className="list-group-item">Франція</li>
-                <li className="list-group-item">Німеччина</li>
-                <li className="list-group-item">Греція</li>
-                <li className="list-group-item">Угорщина</li>
-                <li className="list-group-item">Іран</li>
-                <li className="list-group-item">Ірак</li>
-                <li className="list-group-item">Ізраїль</li>
-                <li className="list-group-item">Італія</li>
-                <li className="list-group-item">Латвія</li>
-                <li className="list-group-item">Ліхтенштейн</li>
-                <li className="list-group-item">Литва</li>
-                <li className="list-group-item">Люксембург</li>
-                <li className="list-group-item">Північна Македонія</li>
-                <li className="list-group-item">Молдова</li>
-                <li className="list-group-item">Чорногорія</li>
-                <li className="list-group-item">Нідерланди</li>
-                <li className="list-group-item">Польща</li>
-                <li className="list-group-item">Румунія</li>
-                <li className="list-group-item">Росія</li>
-                <li className="list-group-item">Сербія</li>
-                <li className="list-group-item">Словаччина</li>
-                <li className="list-group-item">Словенія</li>
-                <li className="list-group-item">Іспанія</li>
-                <li className="list-group-item">Швейцарія</li>
-                <li className="list-group-item">Сирія</li>
-                <li className="list-group-item">Туреччина</li>
-                <li className="list-group-item">Україна</li>
-              </ul>
+            <div className="accordion-item" id="europe">
+              <h2 className="accordion-header">
+                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEurope">
+                  Європа
+                </button>
+              </h2>
+              <div id="collapseEurope" className="accordion-collapse collapse show" data-bs-parent="#populationAccordion">
+                <div className="accordion-body">
+                  Поширена майже на всій території Європи (крім Крайньої Півночі). Найвища щільність у лісостеповій зоні України, Польщі, Німеччини.
+                </div>
+              </div>
             </div>
-          </section>
 
-          <section id="introduced" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#introducedList" 
-                      aria-expanded="false" 
-                      aria-controls="introducedList">
-                Інтродуковані види
-              </button>
-            </h3>
-            <div className="collapse" id="introducedList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Канада</li>
-                <li className="list-group-item">Сполучені Штати Америки</li>
-                <li className="list-group-item">Бразилія</li>
-                <li className="list-group-item">Чилі</li>
-                <li className="list-group-item">Аргентина</li>
-                <li className="list-group-item">Уругвай</li>
-                <li className="list-group-item">Парагвай</li>
-                <li className="list-group-item">Болівія</li>
-                <li className="list-group-item">Перу</li>
-                <li className="list-group-item">Австралія</li>
-                <li className="list-group-item">Нова Зеландія</li>
-              </ul>
+            <div className="accordion-item" id="asia">
+              <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAsia">
+                  Азія
+                </button>
+              </h2>
+              <div id="collapseAsia" className="accordion-collapse collapse" data-bs-parent="#populationAccordion">
+                <div className="accordion-body">
+                  Мешкає від Близького Сходу до Далекого Сходу, включаючи Китай, Японію та Індію.
+                </div>
+              </div>
             </div>
-          </section>
 
-          <section id="biogeographic" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#biogeographicList" 
-                      aria-expanded="false" 
-                      aria-controls="biogeographicList">
-                Біогеографічні зони
-              </button>
-            </h3>
-            <div className="collapse" id="biogeographicList">
-              <ul className="list-group mb-3">
-                <li className="list-group-item">Нотогея</li>
-                <li className="list-group-item">Неарктика</li>
-                <li className="list-group-item">Неотропіка</li>
-                <li className="list-group-item">Палеарктика</li>
-              </ul>
+            <div className="accordion-item" id="america">
+              <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmerica">
+                  Північна Америка
+                </button>
+              </h2>
+              <div id="collapseAmerica" className="accordion-collapse collapse" data-bs-parent="#populationAccordion">
+                <div className="accordion-body">
+                  Інтродукована в XIX столітті. Широко поширена в США та Канаді.
+                </div>
+              </div>
             </div>
-          </section>
 
-          <section id="biomes" className="mt-4">
-            <h3>
-              <button className="btn btn-success w-100 text-start" 
-                      type="button" 
-                      data-bs-toggle="collapse" 
-                      data-bs-target="#biomesList" 
-                      aria-expanded="false" 
-                      aria-controls="biomesList">
-                Біоми WWF
-              </button>
-            </h3>
-            <div className="collapse" id="biomesList">
-              <ul className="list-group">
-                <li className="list-group-item">Помірні луки</li>
-                <li className="list-group-item">Савани і чагарники</li>
-                <li className="list-group-item">Субтропічний ліс</li>
-              </ul>
+            <div className="accordion-item" id="australia">
+              <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAustralia">
+                  Австралія
+                </button>
+              </h2>
+              <div id="collapseAustralia" className="accordion-collapse collapse" data-bs-parent="#populationAccordion">
+                <div className="accordion-body">
+                  Завезена людиною. Вважається інвазивним видом, негативно впливає на місцеву фауну.
+                </div>
+              </div>
             </div>
-          </section>
-        </article>
+
+            <div className="accordion-item" id="status">
+              <h2 className="accordion-header">
+                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus">
+                  Статус популяції
+                </button>
+              </h2>
+              <div id="collapseStatus" className="accordion-collapse collapse" data-bs-parent="#populationAccordion">
+                <div className="accordion-body">
+                  Вид не перебуває під загрозою зникнення. Чисельність стабільна завдяки високій адаптивності.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
 
