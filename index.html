@@ -1,54 +1,95 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Сайт про зайців">
-  <title>Сайт про зайців</title>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лисиця звичайна | Vulpes vulpes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Все про зайців</h1>
-    <nav class="nav justify-content-center">
-      <a href="pages/morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="pages/nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="pages/population.html" class="nav-link text-white">Ареал</a>
-      <a href="pages/photo.html" class="nav-link text-white">Фотогалерея</a>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🦊 Лисиця звичайна</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Головна</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/morphology.html">Зовнішній вигляд</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/nutrition.html">Харчування</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/population.html">Ареал та популяція</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/photo.html">Галерея</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="container py-4">
-    <section>
-      <h2 class="h2 text-success">Ласкаво просимо!</h2>
-      <p>Вітаємо на сайті про зайців! Дізнайтеся більше про їхню морфологію, харчування та популяцію, відвідавши відповідні розділи.</p>
-      
-      <h3 class="h3 text-success mt-4">Розділи сайту:</h3>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a href="pages/morphology.html" class="text-success text-decoration-none">Зовнішній вигляд</a>
-          - Опис зовнішності та особливостей будови зайців
-        </li>
-        <li class="list-group-item">
-          <a href="pages/nutrition.html" class="text-success text-decoration-none">Харчування</a>
-          - Що їдять зайці та їх раціон
-        </li>
-        <li class="list-group-item">
-          <a href="pages/population.html" class="text-success text-decoration-none">Ареал</a>
-          - Де живуть зайці у світі
-        </li>
-        <li class="list-group-item">
-          <a href="pages/photo.html" class="text-success text-decoration-none">Фотогалерея</a>
-          - Колекція фотографій зайців
-        </li>
-      </ul>
+    <!-- Hero -->
+    <section class="hero d-flex align-items-center text-center text-white" 
+             style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/morphology-main.jpg'); background-size: cover; background-position: center; height: 85vh;">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Лисиця звичайна</h1>
+            <h2 class="display-6">Vulpes vulpes</h2>
+            <p class="lead mt-3">Хитрий та красивий хижак родини псових</p>
+            <a href="pages/morphology.html" class="btn btn-light btn-lg mt-3">Дізнатися більше →</a>
+        </div>
     </section>
-  </main>
 
-  <footer class="text-center bg-dark text-white py-2">
-    <p>&copy; 2026 Сайт про зайців</p>
-  </footer>
+    <!-- Картки -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Розділи про лисицю</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow">
+                        <img src="images/fox-head.jpg" class="card-img-top" alt="Зовнішній вигляд">
+                        <div class="card-body">
+                            <h5 class="card-title">Зовнішній вигляд</h5>
+                            <a href="pages/morphology.html" class="btn btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow">
+                        <img src="images/nutrition-main.jpg" class="card-img-top" alt="Харчування">
+                        <div class="card-body">
+                            <h5 class="card-title">Харчування</h5>
+                            <a href="pages/nutrition.html" class="btn btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow">
+                        <img src="images/fox-tail.jpg" class="card-img-top" alt="Ареал">
+                        <div class="card-body">
+                            <h5 class="card-title">Ареал та популяція</h5>
+                            <a href="pages/population.html" class="btn btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow">
+                        <img src="images/photo1.jpg" class="card-img-top" alt="Галерея">
+                        <div class="card-body">
+                            <h5 class="card-title">Фотогалерея</h5>
+                            <a href="pages/photo.html" class="btn btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4 text-center">
+        <div class="container">
+            <p>© 2026 Сивак Назар Костянтинович — Лисиця звичайна (Vulpes vulpes)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Харчування зайців">
-  <title>Харчування зайців</title>
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Харчування | Лисиця звичайна</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Харчування зайців</h1>
-    <nav class="nav justify-content-center">
-      <a href="../index.html" class="nav-link text-white">Головна</a>
-      <a href="morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="population.html" class="nav-link text-white">Ареал</a>
-      <a href="photo.html" class="nav-link text-white">Фотогалерея</a>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🦊 Лисиця звичайна</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Головна</a></li>
+                    <li class="nav-item"><a class="nav-link" href="morphology.html">Зовнішній вигляд</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="nutrition.html">Харчування</a></li>
+                    <li class="nav-item"><a class="nav-link" href="population.html">Ареал та популяція</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photo.html">Галерея</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="container py-4">
-    <article>
-      <h2 class="h2 text-success">Раціон зайців</h2>
-      <p>Зайці є травоїдними тваринами. Їх раціон включає:</p>
-      <ul class="list-group">
-        <li class="list-group-item">Траву, листя і кору дерев.</li>
-        <li class="list-group-item">Овочі, такі як морква та капуста.</li>
-        <li class="list-group-item">Воду, яку вони споживають у великих кількостях.</li>
-      </ul>
-    </article>
-  </main>
+    <div class="container py-5">
+        <h1 class="display-5 text-center mb-4">Харчування Лисиці звичайної</h1>
+        <h2 class="text-center text-muted mb-5">(Vulpes vulpes)</h2>
 
-  <footer class="text-center bg-dark text-white py-2">
-    <p>&copy; 2026 Сайт про зайців</p>
-  </footer>
+        <div class="text-center mb-5">
+            <img src="../images/nutrition-main.jpg" class="img-fluid rounded shadow-lg" alt="Лисиця на полюванні" style="max-height: 500px;">
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h3>Тип харчування</h3>
+                <p>Лисиця — типовий <strong>всеїдний хижак</strong>. Основу раціону складають дрібні ссавці, але вона також споживає птахів, комах, фрукти та падаль.</p>
+
+                <h4 class="mt-4">Основний раціон:</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Миші та полівки (до 70% раціону взимку)</li>
+                    <li class="list-group-item">Зайці, кролі, щури</li>
+                    <li class="list-group-item">Птахи та їхні яйця</li>
+                    <li class="list-group-item">Комахи, черви, жуки</li>
+                    <li class="list-group-item">Ягоди, фрукти, насіння (восени)</li>
+                    <li class="list-group-item">Падаль</li>
+                </ul>
+
+                <h4 class="mt-5">Спосіб полювання</h4>
+                <p>Лисиця полює переважно вночі або в сутінках. Вона використовує гострий слух і нюх. Характерний спосіб — «мишкування»: лисиця стрибає високо вгору і падає на жертву передніми лапами.</p>
+
+                <div class="mt-5 p-4 bg-light rounded-3">
+                    <h5>Цікавий факт</h5>
+                    <p>Лисиці можуть запам’ятовувати місця, де заховали надлишки їжі (схованки), і знаходити їх навіть через кілька місяців.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>© 2026 Сивак Назар Костянтинович — Лисиця звичайна (Vulpes vulpes)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

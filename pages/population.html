@@ -1,183 +1,130 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ареал зайців">
-  <title>Ареал зайців</title>
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ареал та популяція | Лисиця звичайна</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Ареал зайців</h1>
-    <nav class="nav justify-content-center">
-      <a href="../index.html" class="nav-link text-white">Головна</a>
-      <a href="morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="photo.html" class="nav-link text-white">Фотогалерея</a>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🦊 Лисиця звичайна</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Головна</a></li>
+                    <li class="nav-item"><a class="nav-link" href="morphology.html">Зовнішній вигляд</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nutrition.html">Харчування</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="population.html">Ареал та популяція</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photo.html">Галерея</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <main class="container py-4">
-    <div class="row">
-      <div class="col-md-3">
-        <aside class="sticky-top pt-3">
-          <nav class="nav flex-column">
-            <h4>Зміст</h4>
-            <a href="#continentsList" class="nav-link" data-bs-toggle="collapse">Континенти</a>
-            <a href="#subcontinentsList" class="nav-link" data-bs-toggle="collapse">Субконтиненти</a>
-            <a href="#countriesList" class="nav-link" data-bs-toggle="collapse">Країни</a>
-            <a href="#introducedList" class="nav-link" data-bs-toggle="collapse">Інтродуковані в</a>
-            <a href="#biogeographicList" class="nav-link" data-bs-toggle="collapse">Біогеографічні зони</a>
-            <a href="#biomesList" class="nav-link" data-bs-toggle="collapse">WWF Біоми</a>
-          </nav>
-        </aside>
-      </div>
-      <div class="col-md-9">
-        <h2 class="h2 text-success">Ареал</h2>
-        
-        <article class="mt-4">
-          <section id="continents">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#continentsList">
-                Континенти
-              </button>
-            </h3>
-            <div class="collapse" id="continentsList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Європа</li>
-                <li class="list-group-item">Азія</li>
-                <li class="list-group-item">Північна Америка</li>
-              </ul>
-            </div>
-          </section>
+    <div class="container py-5">
+        <h1 class="display-5 text-center mb-5">Ареал та чисельність популяції</h1>
 
-          <section id="subcontinents">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#subcontinentsList">
-                Субконтиненти
-              </button>
-            </h3>
-            <div class="collapse" id="subcontinentsList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Західна Азія</li>
-                <li class="list-group-item">Центральна Азія</li>
-              </ul>
+        <div class="row">
+            <!-- Table of Contents -->
+            <div class="col-lg-3">
+                <div class="sticky-top" style="top: 80px;">
+                    <h5 class="mb-3">Зміст</h5>
+                    <div class="list-group">
+                        <a href="#europe" class="list-group-item list-group-item-action">Європа</a>
+                        <a href="#asia" class="list-group-item list-group-item-action">Азія</a>
+                        <a href="#america" class="list-group-item list-group-item-action">Північна Америка</a>
+                        <a href="#australia" class="list-group-item list-group-item-action">Австралія</a>
+                        <a href="#status" class="list-group-item list-group-item-action">Статус популяції</a>
+                    </div>
+                </div>
             </div>
-          </section>
 
-          <section id="countries">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#countriesList">
-                Країни
-              </button>
-            </h3>
-            <div class="collapse" id="countriesList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Албанія</li>
-                <li class="list-group-item">Австрія</li>
-                <li class="list-group-item">Білорусь</li>
-                <li class="list-group-item">Бельгія</li>
-                <li class="list-group-item">Боснія і Герцеговина</li>
-                <li class="list-group-item">Болгарія</li>
-                <li class="list-group-item">Хорватія</li>
-                <li class="list-group-item">Чехія</li>
-                <li class="list-group-item">Данія</li>
-                <li class="list-group-item">Естонія</li>
-                <li class="list-group-item">Фінляндія</li>
-                <li class="list-group-item">Франція</li>
-                <li class="list-group-item">Німеччина</li>
-                <li class="list-group-item">Греція</li>
-                <li class="list-group-item">Угорщина</li>
-                <li class="list-group-item">Іран</li>
-                <li class="list-group-item">Ірак</li>
-                <li class="list-group-item">Ізраїль</li>
-                <li class="list-group-item">Італія</li>
-                <li class="list-group-item">Латвія</li>
-                <li class="list-group-item">Ліхтенштейн</li>
-                <li class="list-group-item">Литва</li>
-                <li class="list-group-item">Люксембург</li>
-                <li class="list-group-item">Північна Македонія</li>
-                <li class="list-group-item">Молдова</li>
-                <li class="list-group-item">Чорногорія</li>
-                <li class="list-group-item">Нідерланди</li>
-                <li class="list-group-item">Польща</li>
-                <li class="list-group-item">Румунія</li>
-                <li class="list-group-item">Росія</li>
-                <li class="list-group-item">Сербія</li>
-                <li class="list-group-item">Словаччина</li>
-                <li class="list-group-item">Словенія</li>
-                <li class="list-group-item">Іспанія</li>
-                <li class="list-group-item">Швейцарія</li>
-                <li class="list-group-item">Сирія</li>
-                <li class="list-group-item">Туреччина</li>
-                <li class="list-group-item">Україна</li>
-              </ul>
-            </div>
-          </section>
+            <!-- Accordion Content -->
+            <div class="col-lg-9">
+                <div class="accordion" id="habitatAccordion">
 
-          <section id="introduced">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#introducedList">
-                Інтродуковані в
-              </button>
-            </h3>
-            <div class="collapse" id="introducedList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Канада</li>
-                <li class="list-group-item">Сполучені Штати Америки</li>
-                <li class="list-group-item">Бразилія</li>
-                <li class="list-group-item">Чилі</li>
-                <li class="list-group-item">Аргентина</li>
-                <li class="list-group-item">Уругвай</li>
-                <li class="list-group-item">Парагвай</li>
-                <li class="list-group-item">Болівія</li>
-                <li class="list-group-item">Перу</li>
-                <li class="list-group-item">Австралія</li>
-                <li class="list-group-item">Нова Зеландія</li>
-              </ul>
-            </div>
-          </section>
+                    <div class="accordion-item" id="europe">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEurope">
+                                Європа
+                            </button>
+                        </h2>
+                        <div id="collapseEurope" class="accordion-collapse collapse show" data-bs-parent="#habitatAccordion">
+                            <div class="accordion-body">
+                                Поширена майже по всій Європі (крім Крайньої Півночі). Найвища щільність — у лісостеповій зоні.
+                            </div>
+                        </div>
+                    </div>
 
-          <section id="biogeographic">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biogeographicList">
-                Біогеографічні зони
-              </button>
-            </h3>
-            <div class="collapse" id="biogeographicList">
-              <ul class="list-group mb-3">
-                <li class="list-group-item">Нотогея</li>
-                <li class="list-group-item">Неарктика</li>
-                <li class="list-group-item">Неотропіка</li>
-                <li class="list-group-item">Палеарктика</li>
-              </ul>
-            </div>
-          </section>
+                    <div class="accordion-item" id="asia">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAsia">
+                                Азія
+                            </button>
+                        </h2>
+                        <div id="collapseAsia" class="accordion-collapse collapse" data-bs-parent="#habitatAccordion">
+                            <div class="accordion-body">
+                                Мешкає від Близького Сходу до Далекого Сходу, включаючи Японію (підвид). Адаптувалася до різних кліматичних зон.
+                            </div>
+                        </div>
+                    </div>
 
-          <section id="biomes">
-            <h3>
-              <button class="btn btn-success w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#biomesList">
-                WWF Біоми
-              </button>
-            </h3>
-            <div class="collapse" id="biomesList">
-              <ul class="list-group">
-                <li class="list-group-item">Помірні луки</li>
-                <li class="list-group-item">Савани і чагарники</li>
-                <li class="list-group-item">Субтропічний ліс</li>
-              </ul>
+                    <div class="accordion-item" id="america">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmerica">
+                                Північна Америка
+                            </button>
+                        </h2>
+                        <div id="collapseAmerica" class="accordion-collapse collapse" data-bs-parent="#habitatAccordion">
+                            <div class="accordion-body">
+                                Інтродукована в XIX столітті. Широко поширена в США та Канаді.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" id="australia">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAustralia">
+                                Австралія
+                            </button>
+                        </h2>
+                        <div id="collapseAustralia" class="accordion-collapse collapse" data-bs-parent="#habitatAccordion">
+                            <div class="accordion-body">
+                                Завезена в XIX столітті. Вважається інвазивним видом, негативно впливає на місцеву фауну.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" id="status">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStatus">
+                                Статус популяції
+                            </button>
+                        </h2>
+                        <div id="collapseStatus" class="accordion-collapse collapse" data-bs-parent="#habitatAccordion">
+                            <div class="accordion-body">
+                                Вид не перебуває під загрозою. Чисельність стабільна або зростає в багатьох регіонах завдяки високій адаптивності.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </section>
-        </article>
-      </div>
+        </div>
     </div>
-  </main>
 
-  <footer class="text-center bg-dark text-white py-2">
-    <p>&copy; 2026 Сайт про зайців</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>© 2026 Сивак Назар Костянтинович — Лисиця звичайна (Vulpes vulpes)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
