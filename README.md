@@ -1,16 +1,38 @@
-# React + Vite
+# Практична робота №2 — React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Виконав:** Сивак Назар Костянтинович
 
-Currently, two official plugins are available:
+**Тема:** Лисиця звичайна (*Vulpes vulpes*)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Опис проекту
 
-## React Compiler
+Сучасний односторінковий React-додаток про лисицю звичайну з використанням React Router та Bootstrap 5.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Використані технології
 
-## Expanding the ESLint configuration
+- **React** + **Vite**
+- **React Router v6** (навігація)
+- **Bootstrap 5**
+- **JavaScript (ES6+)**
+- Пошук по всьому сайту
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Структура
+
+- `src/components/` — Header, Footer
+- `src/pages/` — Home, Morphology, Nutrition, Population, Photo, SearchResults
+- `public/images/` — всі зображення
+
+## Основні можливості
+
+- Адаптивний дизайн
+- Інтерактивний пошук по всьому сайту
+- Карусель фотографій
+- Акордеон з ареалом
+- Семантична структура
+
+---
+
+**Як запустити:**
+```bash
+npm install
+npm run dev
