@@ -4,9 +4,9 @@ export const swaggerSpec = {
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про Лисиців',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Лисиців',
     },
     // Налаштування серверів для тестування API
     servers: [
@@ -21,12 +21,12 @@ export const swaggerSpec = {
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
         '/api/foxs': {
-            // GET запит для отримання всіх зайців
+            // GET запит для отримання всіх лисиців
             get: {
-                summary: 'Отримати всіх зайців',
+                summary: 'Отримати всіх лисиців',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх лисиців',
                         content: {
                             'application/json': {
                                 schema: {
@@ -39,9 +39,9 @@ export const swaggerSpec = {
                 },
             },
 
-            // POST запит для створення нового зайця
+            // POST запит для створення нового лисиця
             post: {
-                summary: 'Створити нового зайця',
+                summary: 'Створити нового лисиця',
                 requestBody: {
                     required: true,
                     content: {
@@ -52,7 +52,7 @@ export const swaggerSpec = {
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт лисиця",
                         content: {
                             'application/json': {
                                 schema: { $ref: '#/components/schemas/Fox' },
@@ -63,43 +63,43 @@ export const swaggerSpec = {
             },
         },
 
-        // Операції для конкретного зайця за ID
+        // Операції для конкретного лисиця за ID
         '/api/foxs/{id}': {
-            // GET запит для отримання зайця за ID
+            // GET запит для отримання лисиця за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                summary: 'Отримати лисиця за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиця',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт лисиця",
                         content: {
                             'application/json': {
                                 schema: { $ref: '#/components/schemas/Fox' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисиця не знайдено' },
                 },
             },
 
-            // PUT запит для повного оновлення зайця за ID
+            // PUT запит для повного оновлення лисиця за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                summary: 'Повністю оновити лисиця',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиця',
                     },
                 ],
                 requestBody: {
@@ -112,26 +112,26 @@ export const swaggerSpec = {
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт лисиця",
                         content: {
                             'application/json': {
                                 schema: { $ref: '#/components/schemas/Fox' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисиця не знайдено' },
                 },
             },
-            // PATCH запит для часткового оновлення зайця за ID
+            // PATCH запит для часткового оновлення лисиця за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                summary: 'Частково оновити лисиця',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиця',
                     },
                 ],
                 requestBody: {
@@ -144,31 +144,31 @@ export const swaggerSpec = {
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт лисиця",
                         content: {
                             'application/json': {
                                 schema: { $ref: '#/components/schemas/Fox' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисиця не знайдено' },
                 },
             },
-            // DELETE запит для видалення даних про зайця за ID
+            // DELETE запит для видалення даних про лисиця за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                summary: 'Видалити дані про лисиця',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID лисиця',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Лисиця не знайдено' },
                 },
             },
         },
@@ -185,28 +185,28 @@ export const swaggerSpec = {
                 properties: {
                     name: {
                         type: 'string',
-                        description: "Ім'я зайця",
+                        description: "Ім'я лисиця",
                     },
                     age: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: 'Вік лисиця у роках',
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота зайця в сантиметрах',
+                        description: 'Висота лисиця в сантиметрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага зайця в кілограмах',
+                        description: 'Вага лисиця в кілограмах',
                     },
                     gender: {
                         type: 'string',
                         enum: ['male', 'female'],
-                        description: 'Стать зайця',
+                        description: 'Стать лисиця',
                     },
                     description: {
                         type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
+                        description: "Опис лисиця (необов'язкове поле)",
                     },
                 },
             },

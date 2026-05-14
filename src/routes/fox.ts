@@ -4,13 +4,13 @@ import { FoxRepository } from '../repositories/FoxRepository';
 
 // Створюємо новий обробник HTTP-запитів Express
 const router = Router();
-// Отримуємо екземпляр репозиторію зайців з контейнера інверсії залежностей
+// Отримуємо екземпляр репозиторію лисиців з контейнера інверсії залежностей
 const foxRepository = container.get(FoxRepository);
 
-// Обробка HTTP-запиту GET / - отримання всіх записів зайців
+// Обробка HTTP-запиту GET / - отримання всіх записів лисиців
 router.get('/', (async (_req: Request, res: Response) => {
     try {
-        // Отримуємо всі записи зайців з бази даних через репозиторій
+        // Отримуємо всі записи лисиців з бази даних через репозиторій
         const foxs = await foxRepository.findAll();
         res.json(foxs);
     } catch (error) {
