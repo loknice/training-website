@@ -1,18 +1,18 @@
 import { Router, Request, Response } from 'express';
 import { container } from '../config/container';
-import { RabbitRepository } from '../repositories/RabbitRepository';
+import { FoxRepository } from '../repositories/FoxRepository';
 
 // Створюємо новий обробник HTTP-запитів Express
 const router = Router();
 // Отримуємо екземпляр репозиторію зайців з контейнера інверсії залежностей
-const rabbitRepository = container.get(RabbitRepository);
+const foxRepository = container.get(FoxRepository);
 
 // Обробка HTTP-запиту GET / - отримання всіх записів зайців
 router.get('/', (async (_req: Request, res: Response) => {
     try {
         // Отримуємо всі записи зайців з бази даних через репозиторій
-        const rabbits = await rabbitRepository.findAll();
-        res.json(rabbits);
+        const foxs = await foxRepository.findAll();
+        res.json(foxs);
     } catch (error) {
         // Обробка помилки
         const errorMessage = error instanceof Error ? error.message : 'Виникла невідома помилка';
@@ -24,9 +24,9 @@ router.get('/', (async (_req: Request, res: Response) => {
 router.get('/:id', (async (req: Request, res: Response) => {
     try {
         // Пошук зайця за ідентифікатором
-        const rabbit = await rabbitRepository.findById(req.params.id);
-        if (rabbit) {
-            res.json(rabbit);
+        const fox = await foxRepository.findById(req.params.id);
+        if (fox) {
+            res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
             res.status(404).json({ message: 'Запис зайця не знайдено' });
@@ -42,9 +42,9 @@ router.get('/:id', (async (req: Request, res: Response) => {
 router.post('/', (async (req: Request, res: Response) => {
     try {
         // Створюємо новий запис зайця з даних запиту
-        const newRabbit = await rabbitRepository.create(req.body);
+        const newFox = await foxRepository.create(req.body);
         // Повертаємо статус 201 (Created) і дані створеного зайця
-        res.status(201).json(newRabbit);
+        res.status(201).json(newFox);
     } catch (error) {
         // Обробка помилки
         const errorMessage = error instanceof Error ? error.message : 'Виникла невідома помилка';
@@ -67,9 +67,9 @@ router.put('/:id', (async (req: Request, res: Response) => {
         }
 
         // Оновлюємо зайця з вказаним ID
-        const rabbit = await rabbitRepository.update(req.params.id, req.body);
-        if (rabbit) {
-            return res.json(rabbit);
+        const fox = await foxRepository.update(req.params.id, req.body);
+        if (fox) {
+            return res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
             return res.status(404).json({ message: 'Запис зайця не знайдено' });
@@ -85,9 +85,9 @@ router.put('/:id', (async (req: Request, res: Response) => {
 router.patch('/:id', (async (req: Request, res: Response) => {
     try {
         // Часткове оновлення запису зайця - передаються лише ті поля, які потрібно змінити
-        const rabbit = await rabbitRepository.patch(req.params.id, req.body);
-        if (rabbit) {
-            res.json(rabbit);
+        const fox = await foxRepository.patch(req.params.id, req.body);
+        if (fox) {
+            res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
             res.status(404).json({ message: 'Запис зайця не знайдено' });
@@ -103,8 +103,8 @@ router.patch('/:id', (async (req: Request, res: Response) => {
 router.delete('/:id', (async (req: Request, res: Response) => {
     try {
         // Видаляємо дані про зайця за ID
-        const rabbit = await rabbitRepository.delete(req.params.id);
-        if (rabbit) {
+        const fox = await foxRepository.delete(req.params.id);
+        if (fox) {
             // У разі успіху повертаємо повідомлення про видалення
             res.json({ message: 'Запис про зайця видалено' });
         } else {
