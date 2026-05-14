@@ -7,6 +7,7 @@ interface IFox {
     height: number; // Висота зайця в сантиметрах
     weight: number; // Вага зайця в кілограмах
     gender: 'male' | 'female'; // Стать зайця: 'male' - самець, 'female' - самка
+    offspringNumber?: number; // Кількість нащадків (необов'язкове поле)
     description?: string; // Опис зайця (необов'язкове поле)
     dateAdded: Date; // Дата додавання запису до бази даних
 }
@@ -34,6 +35,7 @@ const foxSchema = new Schema<IFox>({
         required: true, // Поле є обов'язковим
         enum: ['male', 'female'], // Допустимі значення: 'male' або 'female'
     },
+    offspringNumber: Number, // Необов'язкове поле
     description: String, // Необов'язкове текстове поле
     dateAdded: {
         type: Date,
