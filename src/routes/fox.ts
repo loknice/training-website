@@ -20,16 +20,16 @@ router.get('/', (async (_req: Request, res: Response) => {
     }
 }) as unknown as (req: Request, res: Response) => void);
 
-// Обробка HTTP-запиту GET /:id - отримання запису одного зайця за ідентифікатором
+// Обробка HTTP-запиту GET /:id - отримання запису одного лисиця за ідентифікатором
 router.get('/:id', (async (req: Request, res: Response) => {
     try {
-        // Пошук зайця за ідентифікатором
+        // Пошук лисиця за ідентифікатором
         const fox = await foxRepository.findById(req.params.id);
         if (fox) {
             res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
-            res.status(404).json({ message: 'Запис зайця не знайдено' });
+            res.status(404).json({ message: 'Запис лисиця не знайдено' });
         }
     } catch (error) {
         // Обробка помилки
@@ -38,12 +38,12 @@ router.get('/:id', (async (req: Request, res: Response) => {
     }
 }) as unknown as (req: Request, res: Response) => void);
 
-// Обробка HTTP-запиту POST / - створення нового запису зайця
+// Обробка HTTP-запиту POST / - створення нового запису лисиця
 router.post('/', (async (req: Request, res: Response) => {
     try {
-        // Створюємо новий запис зайця з даних запиту
+        // Створюємо новий запис лисиця з даних запиту
         const newFox = await foxRepository.create(req.body);
-        // Повертаємо статус 201 (Created) і дані створеного зайця
+        // Повертаємо статус 201 (Created) і дані створеного лисиця
         res.status(201).json(newFox);
     } catch (error) {
         // Обробка помилки
@@ -52,7 +52,7 @@ router.post('/', (async (req: Request, res: Response) => {
     }
 }) as unknown as (req: Request, res: Response) => void);
 
-// Обробка HTTP-запиту PUT /:id - повне оновлення запису зайця
+// Обробка HTTP-запиту PUT /:id - повне оновлення запису лисиця
 router.put('/:id', (async (req: Request, res: Response) => {
     try {
         // Перевірка наявності всіх обов'язкових полів для PUT запиту
@@ -66,13 +66,13 @@ router.put('/:id', (async (req: Request, res: Response) => {
             });
         }
 
-        // Оновлюємо зайця з вказаним ID
+        // Оновлюємо лисиця з вказаним ID
         const fox = await foxRepository.update(req.params.id, req.body);
         if (fox) {
             return res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
-            return res.status(404).json({ message: 'Запис зайця не знайдено' });
+            return res.status(404).json({ message: 'Запис лисиця не знайдено' });
         }
     } catch (error) {
         // Обробка помилки
@@ -81,16 +81,16 @@ router.put('/:id', (async (req: Request, res: Response) => {
     }
 }) as unknown as (req: Request, res: Response) => void);
 
-// Обробка HTTP-запиту PATCH /:id - часткове оновлення запису зайця
+// Обробка HTTP-запиту PATCH /:id - часткове оновлення запису лисиця
 router.patch('/:id', (async (req: Request, res: Response) => {
     try {
-        // Часткове оновлення запису зайця - передаються лише ті поля, які потрібно змінити
+        // Часткове оновлення запису лисиця - передаються лише ті поля, які потрібно змінити
         const fox = await foxRepository.patch(req.params.id, req.body);
         if (fox) {
             res.json(fox);
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
-            res.status(404).json({ message: 'Запис зайця не знайдено' });
+            res.status(404).json({ message: 'Запис лисиця не знайдено' });
         }
     } catch (error) {
         // Обробка помилки
@@ -99,17 +99,17 @@ router.patch('/:id', (async (req: Request, res: Response) => {
     }
 }) as unknown as (req: Request, res: Response) => void);
 
-// Обробка HTTP-запиту DELETE /:id - видалення запису зайця
+// Обробка HTTP-запиту DELETE /:id - видалення запису лисиця
 router.delete('/:id', (async (req: Request, res: Response) => {
     try {
-        // Видаляємо дані про зайця за ID
+        // Видаляємо дані про лисиця за ID
         const fox = await foxRepository.delete(req.params.id);
         if (fox) {
             // У разі успіху повертаємо повідомлення про видалення
-            res.json({ message: 'Запис про зайця видалено' });
+            res.json({ message: 'Запис про лисиця видалено' });
         } else {
             // Якщо заєць не знайдений, повертаємо 404 помилку
-            res.status(404).json({ message: 'Запис про зайця не знайдено' });
+            res.status(404).json({ message: 'Запис про лисиця не знайдено' });
         }
     } catch (error) {
         // Обробка помилки

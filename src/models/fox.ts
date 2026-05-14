@@ -2,13 +2,13 @@ import { Schema, model } from 'mongoose';
 
 // Інтерфейс для об'єкта "Заєць"
 interface IFox {
-    name: string; // Ім'я зайця
-    age: number; // Вік зайця у роках
-    height: number; // Висота зайця в сантиметрах
-    weight: number; // Вага зайця в кілограмах
-    gender: 'male' | 'female'; // Стать зайця: 'male' - самець, 'female' - самка
+    name: string; // Ім'я лисиця
+    age: number; // Вік лисиця у роках
+    height: number; // Висота лисиця в сантиметрах
+    weight: number; // Вага лисиця в кілограмах
+    gender: 'male' | 'female'; // Стать лисиця: 'male' - самець, 'female' - самка
     offspringNumber?: number; // Кількість нащадків (необов'язкове поле)
-    description?: string; // Опис зайця (необов'язкове поле)
+    description?: string; // Опис лисиця (необов'язкове поле)
     dateAdded: Date; // Дата додавання запису до бази даних
 }
 
