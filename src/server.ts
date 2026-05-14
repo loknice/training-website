@@ -30,7 +30,7 @@ const database = container.get<IDatabase>(TYPES.IDatabase);
 const appConfig = container.get<IConfig>('Config');
 
 // Підключаємо обробники HTTP-запитів до REST API
-import foxRoutes from './routes/foxs';
+import foxRoutes from './routes/fox';
 app.use('/api/foxs', foxRoutes);
 
 // Отримуємо порт з конфігурації

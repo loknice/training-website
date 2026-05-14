@@ -56,7 +56,7 @@ router.post('/', (async (req: Request, res: Response) => {
 router.put('/:id', (async (req: Request, res: Response) => {
     try {
         // Перевірка наявності всіх обов'язкових полів для PUT запиту
-        const requiredFields = ['name', 'age', 'height', 'weight', 'gender'];
+        const requiredFields = ['name', 'age', 'height', 'weight', 'gender', 'offspringNumber'];
         const missingFields = requiredFields.filter(field => !(field in req.body));
 
         // Якщо є відсутні поля, повертаємо помилку 400 Bad Request
